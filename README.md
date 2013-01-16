@@ -32,10 +32,11 @@ Instructions:
 
 5. Create an ACS app and obtain the oauth key and oauth secret
 
-6. Modify pixgrid/app.js line 8 to fill in the ACS credientials
+6. Modify pixgrid/app.js line 8 to fill in the ACS credientials, and pixgrid/controllers/dropbox.js line 4 to fill in the dropbox credientials.
 
 ```
-   ACS.init('OAUTH_KEY', 'OAUTH_SECRET_KEY'); // on line 8
+   ACS.init('OAUTH KEY', 'OAUTH SECRET'); // on app.js line 8
+   dboxapp = dbox.app({ 'app_key': 'APP KEY', 'app_secret': 'APP SECRET' }); // on dropbox.js
 ```
 
 7. Test locally
