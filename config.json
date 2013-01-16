@@ -1,0 +1,35 @@
+{
+  "routes":
+  [
+    { "path": "/", "method": "GET", "callback": "application#select" },
+
+    { "path": "/login", "method": "POST", "callback": "session#login" },
+    { "path": "/login", "method": "GET", "callback": "application#login" },
+    { "path": "/logout", "method": "get", "callback": "session#logout" },
+    { "path": "/signup", "method": "get", "callback": "application#signup" },
+    { "path": "/signup", "method": "post", "callback": "user#signup" },
+
+    { "path": "/select", "method": "GET", "callback": "application#select" },
+
+    { "path": "/acs", "method": "GET", "callback": "application#_acs" },
+    { "path": "/photos/create", "method": "post", "callback": "photos#_create" },
+    { "path": "/photos/create.json", "method": "post", "callback": "photos#_create_json" },
+    { "path": "/photos/:id/delete", "method": "get", "callback": "photos#_destroy" },
+
+    { "path": "/dropbox", "method": "GET", "callback": "dropbox#_index" },
+    { "path": "/dropbox/read/:filename", "method": "GET", "callback": "dropbox#_read" },
+    { "path": "/dropbox/create", "method": "post", "callback": "dropbox#_create" },
+    { "path": "/dropbox/create.json", "method": "post", "callback": "dropbox#_create" },
+    { "path": "/dropbox/:filename/delete", "method": "GET", "callback": "dropbox#_destroy" },
+
+    { "path": "*", "method": "get", "callback": "application#page_not_found" }
+  ],
+  "filters":
+  [
+    { "path": "/", "callback": "session_filter#checkUserSession" }
+  ],
+  "websockets":
+  [
+  	{ "event": "", "callback": ""}
+  ]
+}
